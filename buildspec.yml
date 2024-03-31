@@ -19,5 +19,5 @@ phases:
   post_build:
     commands:
       - mvn test
-      - junit $(find target/surefire-reports -name "TEST-*.xml")
+      - junit $(find target/surefire-reports -name "TEST-*.xml" | tr '\n' ' ')
       - ./jenkins/scripts/deliver.sh
