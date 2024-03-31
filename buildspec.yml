@@ -4,11 +4,11 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-  commands:
-    - wget -q -O apache-maven-3.9.0.tar.gz https://downloads.apache.org/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz
-    - tar xzf apache-maven-3.9.0.tar.gz
-    - export MVN_HOME=$(pwd)/apache-maven-3.9.0
-    - export PATH=${MVN_HOME}/bin:${PATH}
+    commands:
+      - wget -q -O apache-maven-3.9.0.tar.gz https://downloads.apache.org/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz
+      - tar xzf apache-maven-3.9.0.tar.gz
+      - export MVN_HOME=$(pwd)/apache-maven-3.9.0
+      - export PATH=${MVN_HOME}/bin:${PATH}
 
 
   build:
