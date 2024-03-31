@@ -1,0 +1,20 @@
+version: 0.2
+
+env:
+  variables:
+    MVN_HOME: "Maven 3.9.0"
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+
+  build:
+    commands:
+      - ${MVN_HOME}/bin/mvn -B -DskipTests clean package
+
+  post_build:
+    commands:
+      - ${MVN_HOME}/bin/mvn test
+      - junit 'target/surefire-reports/*.xml'
+      - ./jenkins/scripts/deliver.sh
